@@ -2,13 +2,18 @@
 	<form #myForm="ngForm">
 		<div>
 			<label> First Name</label>
-			<input type="text" name="fname" class="form-control" ngModel/>
-    </div>
-			<div>
-				<label> Last Name</label>
-				<input type="text" name="lname" class="form-control" ngModel/>
-    </div>
-				<br/>
-				<button class="btn btn-primary" (click)="submitInfo(myForm.value)">Submit</button>
+			<input type="text" name="fname" class="form-control" #fname="ngModel" ngModel required/>
+			<span class="text-danger" *ngIf="fname.touched && !fname.valid">First Name is required</span>
+
+		</div>
+		<div>
+			<label> Last Name</label>
+			<input type="text" name="lname" class="form-control" #lname="ngModel" ngModel required/>
+			<span class="text-danger" *ngIf="lname.touched && !lname.valid">Last Name is required</span>
+		</div>
+		<br/>
+		<button class="btn btn-primary"
+        [disabled]="!myForm.valid"
+         (click)="submitInfo(myForm)">Submit</button>
 	</form>
 </div>

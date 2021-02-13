@@ -9,6 +9,7 @@ const routes: Routes = [
     redirectTo: "/template",
     pathMatch: "full"
   },
+
   { path: "template", component: TemplateDrivenFormComponent },
   { path: "model", component: ModelDrivenFormComponent }
 ];

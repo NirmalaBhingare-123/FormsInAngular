@@ -9,7 +9,11 @@ export class TemplateDrivenFormComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-  submitInfo(data: any) {
-    console.log("Value from html", data);
+  submitInfo(data) {
+    if (data.status == "VALID") {
+      alert(data.status);
+    } else {
+      alert(data.status);
+    }
   }
 }
