@@ -7,7 +7,4 @@ import { Component, VERSION } from "@angular/core";
 })
 export class AppComponent {
   name = "Angular " + VERSION.major;
-  submitInfo(data: any) {
-    console.log("Value from html", data);
-  }
 }
